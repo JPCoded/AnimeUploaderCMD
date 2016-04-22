@@ -1,0 +1,12 @@
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\bin\Debug\CMDAnimeUploader.exe.config
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\bin\Debug\CMDAnimeUploader.exe
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\bin\Debug\CMDAnimeUploader.pdb
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\obj\Debug\CMDAnimeUploader.csprojResolveAssemblyReference.cache
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\obj\Debug\CMDAnimeUploader.exe
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\obj\Debug\CMDAnimeUploader.pdb
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\bin\Debug\Dapper.dll
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\bin\Debug\HtmlAgilityPack.dll
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\bin\Debug\Dapper.pdb
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\bin\Debug\Dapper.xml
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\bin\Debug\HtmlAgilityPack.pdb
+c:\users\heather\documents\visual studio 2015\Projects\CMDAnimeUploader\CMDAnimeUploader\bin\Debug\HtmlAgilityPack.xml
