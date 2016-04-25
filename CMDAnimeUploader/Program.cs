@@ -16,10 +16,11 @@ namespace CMDAnimeUploader
             var animes = dbcontrol.GetAnime();
             var anime = animes.ToList();
             var urllist = anime.Select(id => string.Format("http://myanimelist.net/anime/{0}", id.ID)).ToList();
+            Console.WriteLine("Start: " + GetTime());
+            //RunAsyncAnime(urllist);
+             RunSynchAnime();
 
-            RunAsyncAnime(urllist);
-
-            //   RunSynchAnime();
+            Console.WriteLine("DONE: " + GetTime());
 
         }
 
@@ -40,14 +41,14 @@ namespace CMDAnimeUploader
                     dbControl.InsertAnime(animeObject);
                     if (animeObject.SequelID != 0)
                     {
-                        if (dbControl.AnimeExists((int)animeObject.SequelID, false))
+                        if (animeObject.SequelID != null && dbControl.AnimeExists((int)animeObject.SequelID, false))
                         {
                             animeId = animeObject.SequelID.Value;
                             continue;
                         }
                         if (animeObject.PrequelID != 0)
                         {
-                            if (dbControl.AnimeExists((int)animeObject.PrequelID, false))
+                            if (animeObject.PrequelID != null && dbControl.AnimeExists((int)animeObject.PrequelID, false))
                             {
                                 animeId = animeObject.PrequelID.Value;
                                 continue;
@@ -114,7 +115,6 @@ namespace CMDAnimeUploader
         {  var dbControl = new DatabaseControl();
             var animeElements = GetElements("http://myanimelist.net/malappinfo.php?u=CWarlord87&status=all&type=anime");
 
-            Console.WriteLine("START: " + GetTime());
             foreach (var anime in animeElements)
             {
                 var myanimeObject = new MyAnime();
@@ -145,13 +145,15 @@ namespace CMDAnimeUploader
                 }
             }
 
-            Console.WriteLine("DONE: " + GetTime());}
+            
+        }
+
         private static void RunAsyncAnime(IList<string> animeUrlList)
         {
             var dbControl = new DatabaseControl();
             var check = new UrlChecker();
             var AnimeList =  check.Check(animeUrlList);
-            Console.WriteLine("Start: " + GetTime());
+           
             var enumerable = AnimeList as IList<Anime> ?? AnimeList.ToList();
             var counter = -1;
             while (enumerable.Count < animeUrlList.Count)
@@ -221,7 +223,6 @@ namespace CMDAnimeUploader
                     }
                 }
             }
-            Console.WriteLine("Done: " + GetTime());
             Console.ReadLine();
         }
 

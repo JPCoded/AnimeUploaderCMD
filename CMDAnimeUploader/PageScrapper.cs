@@ -11,7 +11,7 @@ namespace CMDAnimeUploader
 
             var document = GetPage(animeId);
 
-            //need to fix prequel/sequel as it's getting text box below it
+           
             var type =
                 document.DocumentNode.SelectSingleNode("//*[text()='Type:']/parent::div")
                     .InnerText.Replace("Type:", "")
@@ -47,9 +47,7 @@ namespace CMDAnimeUploader
                     .Replace(", ", ",")
                     .Trim();
             var prequelId = document.DocumentNode.SelectSingleNode("//*[text()='Prequel:']/parent::tr/descendant::a");
-            var prequel = document.DocumentNode.SelectSingleNode("//*[text()='Prequel:']/parent::tr");
             var sequelId = document.DocumentNode.SelectSingleNode("//*[text()='Sequel:']/parent::tr/descendant::a");
-            var sequel = document.DocumentNode.SelectSingleNode("//*[text()='Sequel:']/parent::tr");
             var title =
                 document.DocumentNode.SelectSingleNode("//meta[@property='og:title']")
                     .GetAttributeValue("content", "")
@@ -57,22 +55,22 @@ namespace CMDAnimeUploader
                     .Trim();
 
             string[] newPrequelId = null;
-            var newPrequel = "";
+  
             string[] newSequelId = null;
-            var newSequel = "";
+         
 
 
-            if (prequelId.HasAttributes)
+            if (prequelId != null)
             {
                 newPrequelId = prequelId.GetAttributeValue("href", "").Split('/');
-                newPrequel = prequel.InnerText.Replace("Prequel:", "").Trim().Replace("'", "''");
+               
             }
 
 
-            if (sequelId.HasAttributes)
+            if (sequelId != null)
             {
                 newSequelId = sequelId.GetAttributeValue("href", "").Split('/');
-                newSequel = sequel.InnerText.Replace("Sequel:", "").Trim().Replace("'", "''");
+             
             }
 
 
