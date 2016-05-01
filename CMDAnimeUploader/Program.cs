@@ -17,8 +17,8 @@ namespace CMDAnimeUploader
             var anime = animes.ToList();
             var urllist = anime.Select(id => string.Format("http://myanimelist.net/anime/{0}", id.ID)).ToList();
             Console.WriteLine("Start: " + GetTime());
-            //RunAsyncAnime(urllist);
-             RunSynchAnime();
+            RunAsyncAnime(urllist);
+            // RunSynchAnime();
 
             Console.WriteLine("DONE: " + GetTime());
 
